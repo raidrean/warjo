@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PesanWarjo</title>
+    <meta
+      name="description"
+      content="PesanWarjo untuk memesan makanan, minuman, bawa pulang, pembayaran, dan melacak pesanan."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/Warjo_Logo.png" />
+    <link rel="apple-touch-icon" href="img/Warjo_Logo.png" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#f5a623" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PesanWarjo" />
+    <meta property="og:description" content="Pesan makanan & minuman Warjo, bawa pulang atau makan di tempat." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-header">
+        <div class="brand-wrap">
+          <img class="brand-logo" src="img/Warjo_Logo.png" alt="WARJO logo" />
+        </div>
+
+        <nav class="primary-nav" aria-label="Navigasi utama">
+          <button class="nav-link active" data-view="home">Beranda</button>
+          <button class="nav-link" data-view="menu">Menu</button>
+          <button class="nav-link" data-view="promo">Promo</button>
+          <button class="nav-link" data-view="orders">Pesanan</button>
+          <button class="nav-link" data-view="account">Akun</button>
+        </nav>
+
+        <div class="header-tools">
+          <label class="header-search" aria-label="Cari makanan atau minuman">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="header-search" type="text" placeholder="Cari makanan atau minuman..." />
+          </label>
+          <div id="table-indicator" class="table-indicator hidden" aria-live="polite"></div>
+          <button class="cart-trigger" data-view="cart" aria-label="Lihat keranjang">
+            <span class="cart-icon" aria-hidden="true">🛒</span>
+            <span class="cart-count-badge">0</span>
+          </button>
+        </div>
+      </header>
+
+      <main id="main-view" aria-live="polite"></main>
+
+    </div>
+
+    <div id="modal-root"></div>
+    <div id="toast-container"></div>
+
+    <script defer src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+    <script defer src="firebase-config.js"></script>
+    <script defer src="sync.js"></script>
+    <script defer src="menu-seed.js"></script>
+    <script defer src="script.js"></script>
+  </body>
+</html>
